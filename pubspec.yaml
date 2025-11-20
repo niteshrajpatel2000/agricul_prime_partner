@@ -1,0 +1,142 @@
+name: mobile_pos
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.10+11
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+  intl:
+
+
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons:
+  barcode_widget:
+  flutter_grid_button:
+  image_picker:
+  flutter_easyloading:
+  flutter_riverpod:
+  shimmer:
+  cached_network_image:
+  url_launcher:
+  flutter_feather_icons:
+  permission_handler:
+  shared_preferences:
+  restart_app:
+  pinput:
+  nb_utils:
+  youtube_player_flutter:
+  pdf:
+  open_file:
+  path_provider:
+  provider:
+  http:
+  internet_connection_checker_plus:
+  flutter_pdfview:
+  iconly:
+  intl_utils:
+  intl_phone_field:
+  flutter_svg:
+  smooth_page_indicator:
+  animated_notch_bottom_bar:
+  webview_flutter:
+  webview_flutter_android:
+  fl_chart: ^0.70.2
+  print_bluetooth_thermal:
+  mobile_scanner:
+  excel:
+  flutter_typeahead:
+  esc_pos_utils_plus:
+  printing:
+  file_selector:
+  file_picker:
+  share_plus:
+  bijoy_helper:
+  hugeicons:
+  dropdown_button2:
+  collection:
+  community_material_icon:
+  faker:
+  image:
+  bluetooth_print_plus:
+  flutter_slidable:
+#  pdf_render: ^1.4.12
+  barcode:
+  screenshot:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints:
+  change_app_package_name:
+  icons_launcher:
+
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - images/
+    - assets/
+    - assets/hrm/
+    - assets/fonts/
+
+
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: fonts/NotoSans/NotoSans-Thin.ttf
+          weight: 100
+        - asset: fonts/NotoSans/NotoSans-ExtraLight.ttf
+          weight: 200
+        - asset: fonts/NotoSans/NotoSans-Light.ttf
+          weight: 300
+        - asset: fonts/NotoSans/NotoSans-Regular.ttf
+          weight: 400
+        - asset: fonts/NotoSans/NotoSans-Medium.ttf
+          weight: 500
+        - asset: fonts/NotoSans/NotoSans-SemiBold.ttf
+          weight: 600
+        - asset: fonts/NotoSans/NotoSans-Bold.ttf
+          weight: 700
+        - asset: fonts/NotoSans/NotoSans-ExtraBold.ttf
+          weight: 800
+        - asset: fonts/NotoSans/NotoSans-Black.ttf
+          weight: 900
+
+flutter_intl:
+  enabled: true
+
+
+icons_launcher:
+  image_path: "images/appIcon.png"
+  platforms:
+    android:
+      enable: true
+
+    ios:
+      enable: true
+      image_path: "images/appIcon.png"
