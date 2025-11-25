@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-const kMainColor = Color(0xffC52127);
+// const kMainColor = Color(0xffC52127);
+const kMainColor = Color(0xFF235D36);
 const kMainColor100 = Color(0xffFDE7F2);
 const kMainColor50 = Color(0xffFEF0F1);
 const kGreyTextColor = Color(0xFF828282);
@@ -33,7 +34,8 @@ String purchaseCode = '8a998046-b296-4e7d-b627-ae6e15b8390b';
 
 ///---------update information---------------
 
-const String splashLogo = 'images/splashLogo.png';
+// const String splashLogo = 'images/splashLogo.png';
+const String splashLogo = 'images/prime_partner.png';
 const String onboard1 = 'images/onbord1.png';
 const String onboard2 = 'images/onbord2.png';
 const String onboard3 = 'images/onbord3.png';

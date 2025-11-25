@@ -16,6 +16,7 @@ import '../../constant.dart';
 import '../../currency.dart';
 import '../../widgets/page_navigation_list/_page_navigation_list.dart';
 import '../Authentication/Repo/logout_repo.dart';
+import '../Authentication/Sign In/sign_in_screen.dart';
 import '../Currency/currency_screen.dart';
 import '../../service/check_user_role_permission_provider.dart';
 import '../barcode/gererate_barcode.dart';
@@ -136,12 +137,38 @@ class SettingScreenState extends ConsumerState<SettingScreen> {
                   }
 
                   if (value.type == PageNavigationListTileType.function) {
+                    // if (value.value == 'logout') {
+                    //   ref.invalidate(businessInfoProvider);
+                    //   EasyLoading.show(status: lang.S.of(context).logOut);
+                    //   LogOutRepo repo = LogOutRepo();
+                    //   await repo.signOutApi();
+                    // }
                     if (value.value == 'logout') {
-                      ref.invalidate(businessInfoProvider);
+                      // ref.invalidate(businessInfoProvider);
+                      // EasyLoading.show(status: lang.S.of(context).logOut);
+                      // LogOutRepo repo = LogOutRepo();
+                      // await repo.signOutApi();
+                      // EasyLoading.dismiss();
+                      //
+                      // if (!mounted) return;
+                      // Navigator.pushReplacement(context,
+                      //     MaterialPageRoute(builder: (_) => const SignIn()));
+
                       EasyLoading.show(status: lang.S.of(context).logOut);
+
                       LogOutRepo repo = LogOutRepo();
                       await repo.signOutApi();
+                      EasyLoading.dismiss();
+                      if (!mounted) return;
+                      Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (_) => const SignIn()),
+                            (route) => false,
+                      );
+                      Future.delayed(Duration(milliseconds: 200), () {
+                        ref.invalidate(businessInfoProvider);
+                      });
                     }
+
                     if (value.value == 'delete_account') {
                       showDeleteAccountDialog(context, ref);
                     }

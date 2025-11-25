@@ -366,19 +366,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             ],
                           );
                         } else {
-                          return Center(
-                            child: Container(
-                              height: 150,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage('images/banner1.png'),
-                                ),
-                              ),
-                            ),
-                          );
+                          return SizedBox.shrink();
+                          // return Center(
+                          //   child: Container(
+                          //     height: 150,
+                          //     width: MediaQuery.of(context).size.width,
+                          //     decoration: BoxDecoration(
+                          //       borderRadius: BorderRadius.circular(5),
+                          //       image: DecorationImage(
+                          //         fit: BoxFit.cover,
+                          //         image: AssetImage('images/banner1.png'),
+                          //       ),
+                          //     ),
+                          //   ),
+                          // );
                         }
                       }, error: (e, stack) {
                         return Padding(

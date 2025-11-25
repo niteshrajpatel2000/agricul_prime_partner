@@ -10,7 +10,7 @@ import '../Home/home.dart';
 import 'language_provider.dart';
 
 class SelectLanguage extends StatefulWidget {
-  const SelectLanguage({Key? key, this.alreadySelectedLanguage}) : super(key: key);
+  const SelectLanguage({super.key, this.alreadySelectedLanguage});
   final String? alreadySelectedLanguage;
 
   @override
@@ -36,7 +36,6 @@ class _SelectLanguageState extends State<SelectLanguage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getInit();
   }

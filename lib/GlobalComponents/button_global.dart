@@ -86,8 +86,8 @@ class NameWithLogo extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 75,
-          width: 66,
+          height: 100,
+          width: 100,
           decoration: const BoxDecoration(image: DecorationImage(image: AssetImage(logo))),
         ),
         const Text(

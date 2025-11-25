@@ -86,7 +86,8 @@ class S {
 
   /// `VAT Number`
   String get vatNumber {
-    return Intl.message('VAT Number', name: 'vatNumber', desc: '', args: []);
+    // return Intl.message('VAT Number', name: 'vatNumber', desc: '', args: []);
+    return Intl.message('GST Number', name: 'gstNumber', desc: '', args: []);
   }
 
   /// `Customer Signature`
@@ -172,8 +173,10 @@ class S {
   /// `VAT/GST Tittle`
   String get vatGstTitle {
     return Intl.message(
-      'VAT/GST Tittle',
-      name: 'vatGstTitle',
+      // 'VAT/GST Tittle',
+      'GST Tittle',
+      // name: 'vatGstTitle',
+      name: 'GstTitle',
       desc: '',
       args: [],
     );
@@ -182,8 +185,10 @@ class S {
   /// `Enter VAT/GST Title`
   String get enterVatGstTitle {
     return Intl.message(
-      'Enter VAT/GST Title',
-      name: 'enterVatGstTitle',
+      'Enter GST Title',
+      // 'Enter VAT/GST Title',
+      // name: 'enterVatGstTitle',
+      name: 'enterGstTitle',
       desc: '',
       args: [],
     );
@@ -192,8 +197,10 @@ class S {
   /// `VAT/GST Number`
   String get vatGstNumber {
     return Intl.message(
-      'VAT/GST Number',
-      name: 'vatGstNumber',
+      // 'VAT/GST Number',
+      'GST Number',
+      // name: 'vatGstNumber',
+      name: 'GstNumber',
       desc: '',
       args: [],
     );
@@ -202,8 +209,10 @@ class S {
   /// `Enter VAT/GST Number`
   String get enterVatGstNumber {
     return Intl.message(
-      'Enter VAT/GST Number',
-      name: 'enterVatGstNumber',
+      // 'Enter VAT/GST Number',
+      'Enter GST Number',
+      // name: 'enterVatGstNumber',
+      name: 'enterGstNumber',
       desc: '',
       args: [],
     );
@@ -211,7 +220,8 @@ class S {
 
   /// `Vat & Tax`
   String get vatAndTax {
-    return Intl.message('Vat & Tax', name: 'vatAndTax', desc: '', args: []);
+    // return Intl.message('Vat & Tax', name: 'vatAndTax', desc: '', args: []);
+    return Intl.message('Gst & Tax', name: 'gstAndTax', desc: '', args: []);
   }
 
   /// `Custom Print`
@@ -1056,7 +1066,8 @@ class S {
 
   /// `Total Vat`
   String get totalVat {
-    return Intl.message('Total Vat', name: 'totalVat', desc: '', args: []);
+    // return Intl.message('Total Vat', name: 'totalVat', desc: '', args: []);
+    return Intl.message('Total Gst', name: 'totalGst', desc: '', args: []);
   }
 
   /// `Delivery Charge`
@@ -1661,7 +1672,8 @@ class S {
 
   /// `Due List`
   String get dueList {
-    return Intl.message('Due List', name: 'dueList', desc: '', args: []);
+    // return Intl.message('Due List', name: 'dueList', desc: '', args: []);
+    return Intl.message('Khata', name: 'Khata', desc: '', args: []);
   }
 
   /// `Collect Due`
@@ -3886,7 +3898,8 @@ class S {
 
   /// `VAT`
   String get vat {
-    return Intl.message('VAT', name: 'vat', desc: '', args: []);
+    // return Intl.message('VAT', name: 'vat', desc: '', args: []);
+    return Intl.message('GST', name: 'gst', desc: '', args: []);
   }
 
   /// `Customer Phone Number`

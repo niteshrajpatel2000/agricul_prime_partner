@@ -1,4 +1,4 @@
-package com.acnoo.pospro
+package agricul.prime.partner
 
 import io.flutter.embedding.android.FlutterActivity
 
