@@ -221,7 +221,7 @@ class S {
   /// `Vat & Tax`
   String get vatAndTax {
     // return Intl.message('Vat & Tax', name: 'vatAndTax', desc: '', args: []);
-    return Intl.message('Gst & Tax', name: 'gstAndTax', desc: '', args: []);
+    return Intl.message('Gst', name: 'gstAndTax', desc: '', args: []);
   }
 
   /// `Custom Print`

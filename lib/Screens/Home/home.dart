@@ -8,22 +8,28 @@ import 'package:mobile_pos/Screens/Settings/settings_screen.dart';
 import 'package:mobile_pos/Screens/pos_sale/pos_sale.dart';
 import 'package:mobile_pos/constant.dart';
 import 'package:mobile_pos/generated/l10n.dart' as lang;
-import 'package:mobile_pos/model/business_info_model.dart' as visible;
-
 import '../../GlobalComponents/glonal_popup.dart';
+import '../../Provider/app_update_provider.dart';
 import '../../Provider/profile_provider.dart';
-import '../../service/check_actions_when_no_branch.dart';
 
-class Home extends StatefulWidget {
+class Home extends ConsumerStatefulWidget{
   const Home({super.key});
 
   @override
-  _HomeState createState() => _HomeState();
+  ConsumerState<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends ConsumerState<Home> {
   int _tabIndex = 0;
   late final PageController pageController = PageController(initialPage: _tabIndex);
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(appUpdateProvider.notifier).checkForUpdate(context);
+    });
+  }
 
   @override
   void dispose() {

@@ -11,7 +11,6 @@ import 'package:mobile_pos/core/theme/_app_colors.dart';
 import 'package:mobile_pos/generated/l10n.dart' as lang;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:restart_app/restart_app.dart';
-
 import '../../Provider/profile_provider.dart';
 import '../../constant.dart';
 import '../../currency.dart';
