@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
@@ -97,15 +98,18 @@ class SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
     getPermission();
     CurrencyMethods().getCurrencyFromLocalDatabase();
     checkUserValidity();
     setLanguage();
   }
 
+
+
   Future<void> setLanguage() async {
     final prefs = await SharedPreferences.getInstance();
-    final savedLanguageCode = prefs.getString('lang') ?? 'en'; // Default to English code
+    final savedLanguageCode = prefs.getString('lang') ?? 'en';
     setState(() {
       selectedLanguage = savedLanguageCode;
     });

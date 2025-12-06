@@ -3,17 +3,13 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mobile_pos/Const/api_config.dart';
 import 'package:mobile_pos/GlobalComponents/button_global.dart';
 import 'package:mobile_pos/GlobalComponents/glonal_popup.dart';
 import 'package:mobile_pos/Screens/Authentication/Sign%20In/webview_login.dart';
 import 'package:mobile_pos/generated/l10n.dart' as lang;
 import 'package:shared_preferences/shared_preferences.dart';
-
+import '../../../Const/api_config.dart';
 import '../../../constant.dart';
-import '../../../service/check_user_role_permission_provider.dart';
-import '../Sign Up/sign_up_screen.dart';
-import '../forgot password/forgot_password.dart';
 import 'Repo/sign_in_repo.dart';
 import '../../../Repository/check_addon_providers.dart';
 
@@ -398,6 +394,46 @@ class _SignInState extends State<SignIn> {
                       //     ),
                       //   );
                       // }),
+                      OutlinedButton.icon(
+                        onPressed: () {
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => WebViewLogin(
+                          //       loginUrl: "${APIConfig.domain}login/google?platform=app",
+                          //     ),
+                          //   ),
+                          // );
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const WebViewLogin(
+                                loginUrl: "https://prime-partner.gpcagro.in/login",
+                              ),
+                            ),
+                          );
+
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8,
+                          ),
+                          minimumSize: Size(double.infinity, 48),
+                          side: const BorderSide(color: kBorder),
+                          foregroundColor: _theme.colorScheme.onPrimaryContainer,
+                        ),
+                        label: Text(
+                          'Login on web',
+                          style: _theme.textTheme.titleMedium?.copyWith(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        icon: SvgPicture.asset(
+                          'assets/google.svg',
+                          width: 26,
+                        ),
+                      )
                     ],
                   ),
                 ),
