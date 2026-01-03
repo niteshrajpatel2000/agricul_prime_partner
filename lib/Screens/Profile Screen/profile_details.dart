@@ -83,19 +83,19 @@ class ProfileDetailsState extends State<ProfileDetails> {
               backgroundColor: Colors.white,
               elevation: 0.0,
             ),
-            bottomNavigationBar: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: ElevatedButton.icon(
-                label: Text(lang.S.of(context).changePassword),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ChangePasswordScreen(),
-                      ));
-                },
-              ),
-            ),
+            // bottomNavigationBar: Padding(
+            //   padding: const EdgeInsets.all(10.0),
+            //   child: ElevatedButton.icon(
+            //     label: Text(lang.S.of(context).changePassword),
+            //     onPressed: () {
+            //       Navigator.push(
+            //           context,
+            //           MaterialPageRoute(
+            //             builder: (context) => ChangePasswordScreen(),
+            //           ));
+            //     },
+            //   ),
+            // ),
             body: Padding(
               padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(

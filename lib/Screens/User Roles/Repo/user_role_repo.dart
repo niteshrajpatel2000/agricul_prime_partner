@@ -34,8 +34,9 @@ class UserRoleRepo {
     required WidgetRef ref,
     required BuildContext context,
     required String name,
-    required String email,
-    required String password,
+    String? email,
+    required String phone,
+     String? password,
     String? branchId,
     required Map<String, Map<String, String>> visibility,
   }) async {
@@ -48,8 +49,9 @@ class UserRoleRepo {
 
     request.fields.addAll({
       "name": name,
-      "email": email,
-      "password": password,
+      "phone": phone,
+      "email": email??'',
+      "password": password??'',
     });
     if (branchId != null) {
       request.fields['branch_id'] = branchId;
@@ -85,7 +87,8 @@ class UserRoleRepo {
     required WidgetRef ref,
     required BuildContext context,
     required String name,
-    required String email,
+    required String phone,
+     String? email,
     String? password,
     String? branchId,
     required String userId,
@@ -104,7 +107,8 @@ class UserRoleRepo {
 
     request.fields.addAll({
       "name": name,
-      "email": email,
+      "phone": phone,
+      "email": email??'',
       "_method": 'put',
     });
     if (branchId != null) {

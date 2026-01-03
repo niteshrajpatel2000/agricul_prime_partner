@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_pos/constant.dart';
 
@@ -37,6 +38,7 @@ class _AddUserRoleScreenState extends ConsumerState<AddUserRoleScreen> {
   }
 
   TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
   TextEditingController titleController = TextEditingController();
@@ -49,6 +51,7 @@ class _AddUserRoleScreenState extends ConsumerState<AddUserRoleScreen> {
     if (widget.userRole != null) {
       emailController.text = widget.userRole!.email ?? '';
       titleController.text = widget.userRole!.name ?? '';
+      phoneController.text = widget.userRole!.phone ?? '';
       // selectedBranch = widget.userRole.branchId ?? '';
       selectedPermissions = widget.userRole!.visibility.map((key, value) {
         return MapEntry(
@@ -177,21 +180,42 @@ class _AddUserRoleScreenState extends ConsumerState<AddUserRoleScreen> {
                         },
                         controller: titleController,
                         decoration: InputDecoration(
-                          labelText: 'Name',
+                          label:requiredLabel('Name'),
                           hintText: 'Enter user name',
                           border: OutlineInputBorder(),
                         ),
                       ),
                       SizedBox(height: 24),
                       TextFormField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Email cannot be empty';
-                          } else if (!value.contains('@')) {
-                            return 'Please enter a valid email';
+                        controller: phoneController,
+                        keyboardType: TextInputType.phone,
+                        maxLength: 10,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly,
+                          LengthLimitingTextInputFormatter(10),
+                        ],
+                        decoration: InputDecoration(
+                          label: requiredLabel('Phone'),
+                          hintText: 'Enter phone number',
+                          counterText: '',
+                        ),
+                        validator: (v) {
+                          if (v == null || v.length != 10) {
+                            return 'Enter valid 10 digit number';
                           }
                           return null;
                         },
+                      ),
+                      SizedBox(height: 24),
+                      TextFormField(
+                        // validator: (value) {
+                        //   if (value == null || value.isEmpty) {
+                        //     return 'Email cannot be empty';
+                        //   } else if (!value.contains('@')) {
+                        //     return 'Please enter a valid email';
+                        //   }
+                        //   return null;
+                        // },
                         controller: emailController,
                         decoration: InputDecoration(
                           labelText: 'Email',
@@ -203,18 +227,18 @@ class _AddUserRoleScreenState extends ConsumerState<AddUserRoleScreen> {
                       TextFormField(
                         obscureText: _obscureText,
                         controller: passwordController,
-                        validator: (value) {
-                          if (widget.userRole != null) {
-                            return null;
-                          }
-                          if (value == null || value.isEmpty) {
-                            return 'Password can\'t be empty';
-                          } else if (value.length < 4) {
-                            return 'Please enter a bigger password';
-                          }
-
-                          return null;
-                        },
+                        // validator: (value) {
+                        //   if (widget.userRole != null) {
+                        //     return null;
+                        //   }
+                        //   if (value == null || value.isEmpty) {
+                        //     return 'Password can\'t be empty';
+                        //   } else if (value.length < 4) {
+                        //     return 'Please enter a bigger password';
+                        //   }
+                        //
+                        //   return null;
+                        // },
                         decoration: InputDecoration(
                           labelText: 'Password',
                           hintText: 'Enter your password',
@@ -385,6 +409,7 @@ class _AddUserRoleScreenState extends ConsumerState<AddUserRoleScreen> {
                   email: emailController.text,
                   password: passwordController.text,
                   visibility: visibilityMap,
+                  phone:phoneController.text,
                 );
               } else {
                 // Update
@@ -398,6 +423,7 @@ class _AddUserRoleScreenState extends ConsumerState<AddUserRoleScreen> {
                   email: emailController.text,
                   password: passwordController.text,
                   visibility: visibilityMap,
+                  phone:phoneController.text,
                 );
               }
 
@@ -458,6 +484,20 @@ class _AddUserRoleScreenState extends ConsumerState<AddUserRoleScreen> {
                 onChanged: onChanged,
               ),
             ),
+    );
+  }
+  Widget requiredLabel(String text) {
+    return RichText(
+      text: TextSpan(
+        text: text,
+        style: const TextStyle(color: Colors.black),
+        children: const [
+          TextSpan(
+            text: ' *',
+            style: TextStyle(color: Colors.red),
+          ),
+        ],
+      ),
     );
   }
 

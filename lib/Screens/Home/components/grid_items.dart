@@ -74,11 +74,11 @@ List<GridItems> getFreeIcons({required BuildContext context, bool? brunchPermiss
       icon: 'assets/expense.svg',
       route: 'Expense',
     ),
-    GridItems(
-      title: lang.S.of(context).vatAndTax,
-      icon: 'assets/tax.svg',
-      route: 'tax',
-    ),
+    // GridItems(
+    //   title: lang.S.of(context).vatAndTax,
+    //   icon: 'assets/tax.svg',
+    //   route: 'tax',
+    // ),
     GridItems(
       title: lang.S.of(context).customPrint,
       icon: 'assets/printer.svg',

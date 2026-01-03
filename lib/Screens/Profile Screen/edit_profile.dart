@@ -1,15 +1,14 @@
 // ignore_for_file: unused_result
 
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mobile_pos/Const/api_config.dart';
 import 'package:mobile_pos/generated/l10n.dart' as lang;
 import 'package:nb_utils/nb_utils.dart';
-
 import '../../GlobalComponents/glonal_popup.dart';
 import '../../Provider/profile_provider.dart';
 import '../../Provider/shop_category_provider.dart';
@@ -37,7 +36,6 @@ class _EditProfileState extends State<EditProfile> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     nameController.text = widget.profile.data?.companyName ?? '';
     phoneController.text = widget.profile.data?.phoneNumber ?? '';
@@ -322,6 +320,12 @@ class _EditProfileState extends State<EditProfile> {
                                 // validator: (value) {
                                 //   return null;
                                 // },
+                                readOnly: true,
+                                maxLength: 10,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly,
+                                  LengthLimitingTextInputFormatter(10),
+                                ],
                                 keyboardType: TextInputType.phone,
                                 decoration: kInputDecoration.copyWith(
                                   labelText: lang.S.of(context).phone,

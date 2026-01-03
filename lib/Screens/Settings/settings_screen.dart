@@ -212,11 +212,11 @@ class SettingScreenState extends ConsumerState<SettingScreen> {
         svgIconPath: 'assets/sales.svg',
         route: SalesSettingsScreen(),
       ),
-      PageNavigationNavTile(
-        title: lang.S.of(context).subscription,
-        svgIconPath: 'assets/subscription.svg',
-        route: const PackageScreen(),
-      ),
+      // PageNavigationNavTile(
+      //   title: lang.S.of(context).subscription,
+      //   svgIconPath: 'assets/subscription.svg',
+      //   route: const PackageScreen(),
+      // ),
       PageNavigationNavTile(
         title: lang.S.of(context).dashboard,
         svgIconPath: 'assets/dashboard.svg',
